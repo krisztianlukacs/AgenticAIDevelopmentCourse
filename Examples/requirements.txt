@@ -2,3 +2,7 @@ python-dotenv
 langchain_groq
 langchain-google-genai
 google-generativeai
+ollama
+langchain-ollama
+langchain_community
+
