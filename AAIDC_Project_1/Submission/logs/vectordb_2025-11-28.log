@@ -50,3 +50,9 @@
 2025-11-28 22:42:41,084 - vectordb - INFO - Processing 1 documents...
 2025-11-28 22:42:42,303 - vectordb - INFO - Added 89 chunks from 1 documents to vector database
 2025-11-28 22:42:42,303 - vectordb - INFO - Documents added to vector database
+2025-11-28 22:46:52,048 - vectordb - INFO - VectorDB initialized
+2025-11-28 22:46:52,197 - vectordb - INFO - Loading embedding model: sentence-transformers/all-MiniLM-L6-v2
+2025-11-28 22:46:54,166 - vectordb - INFO - Vector database initialized with collection: rag_documents
+2025-11-28 22:46:54,169 - vectordb - INFO - Processing 1 documents...
+2025-11-28 22:46:55,279 - vectordb - INFO - Added 89 chunks from 1 documents to vector database
+2025-11-28 22:46:55,279 - vectordb - INFO - Documents added to vector database

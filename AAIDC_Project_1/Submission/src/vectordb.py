@@ -168,7 +168,7 @@ class VectorDB:
         # Use LangChain's RecursiveCharacterTextSplitter for intelligent chunking
         text_splitter = RecursiveCharacterTextSplitter(
             chunk_size=chunk_size,          # ~200-250 words per chunk
-            chunk_overlap=200,              # Overlap to preserve context between chunks
+            chunk_overlap=100,              # Overlap to preserve context between chunks
             separators=["\n\n", "\n", ". ", " ", ""],  # Try to split on these in order
             length_function=len,
         )
