@@ -8,6 +8,19 @@ from langchain_openai import ChatOpenAI
 from langchain_groq import ChatGroq
 from langchain_google_genai import ChatGoogleGenerativeAI
 
+"""
+An AI assistant that can:
+
+1. Load documents from the ./data/ folder (MarkDown files, text files)
+2. Chunk documents into smaller pieces
+3. Store document chunks in a vector database (ChromaDB) with embeddings from HuggingFace
+4. Use a Retrieval-Augmented Generation (RAG) approach to answer user questions by
+5. Answer questions using the information it found
+6. Combine multiple sources to give comprehensive answers 
+
+"""
+
+
 # Load environment variables
 load_dotenv()
 
