@@ -1,7 +1,114 @@
+import logging
 import os
 import chromadb
+from chromadb.config import Settings
 from typing import List, Dict, Any
 from sentence_transformers import SentenceTransformer
+from .logmanager import LogManager
+import logging
+import re
+
+class RecursiveCharacterTextSplitter:
+    """
+    Simple implementation of recursive character text splitter.
+    Splits text recursively using different separators to maintain semantic meaning.
+    """
+    
+    def __init__(self, chunk_size: int = 1000, chunk_overlap: int = 200, 
+                 separators: List[str] = None, length_function=len):
+        self.chunk_size = chunk_size
+        self.chunk_overlap = chunk_overlap
+        self.separators = separators or ["\n\n", "\n", ". ", " ", ""]
+        self.length_function = length_function
+    
+    def split_text(self, text: str) -> List[str]:
+        """Split text into chunks using recursive separation."""
+        chunks = []
+        
+        def _split_text_recursive(text: str, separators: List[str]) -> List[str]:
+            """Recursively split text using the list of separators."""
+            final_chunks = []
+            
+            # Get the appropriate separator
+            separator = separators[-1] if separators else ""
+            new_separators = []
+            
+            for i, sep in enumerate(separators):
+                if sep == "":
+                    separator = sep
+                    break
+                if re.search(re.escape(sep), text):
+                    separator = sep
+                    new_separators = separators[i + 1:]
+                    break
+            
+            # Split by separator
+            splits = text.split(separator) if separator else [text]
+            
+            # Merge splits into chunks
+            good_splits = []
+            for s in splits:
+                if self.length_function(s) < self.chunk_size:
+                    good_splits.append(s)
+                else:
+                    if good_splits:
+                        merged_text = self._merge_splits(good_splits, separator)
+                        final_chunks.extend(merged_text)
+                        good_splits = []
+                    
+                    # If still too long, recursively split
+                    if new_separators:
+                        other_chunks = _split_text_recursive(s, new_separators)
+                        final_chunks.extend(other_chunks)
+                    else:
+                        # Force split by chunk_size
+                        for i in range(0, len(s), self.chunk_size - self.chunk_overlap):
+                            final_chunks.append(s[i:i + self.chunk_size])
+            
+            if good_splits:
+                merged_text = self._merge_splits(good_splits, separator)
+                final_chunks.extend(merged_text)
+            
+            return final_chunks
+        
+        return _split_text_recursive(text, self.separators)
+    
+    def _merge_splits(self, splits: List[str], separator: str) -> List[str]:
+        """Merge small splits into chunks of approximately chunk_size."""
+        chunks = []
+        current_chunk = []
+        current_length = 0
+        
+        for split in splits:
+            split_len = self.length_function(split)
+            
+            if current_length + split_len + (len(separator) if current_chunk else 0) > self.chunk_size:
+                if current_chunk:
+                    chunks.append(separator.join(current_chunk))
+                    
+                    # Handle overlap
+                    overlap_target = self.chunk_overlap
+                    overlap_text = []
+                    overlap_len = 0
+                    
+                    for s in reversed(current_chunk):
+                        if overlap_len + self.length_function(s) <= overlap_target:
+                            overlap_text.insert(0, s)
+                            overlap_len += self.length_function(s) + len(separator)
+                        else:
+                            break
+                    
+                    current_chunk = overlap_text
+                    current_length = sum(self.length_function(s) for s in current_chunk) + \
+                                   len(separator) * max(0, len(current_chunk) - 1)
+            
+            current_chunk.append(split)
+            current_length += split_len + (len(separator) if len(current_chunk) > 1 else 0)
+        
+        if current_chunk:
+            chunks.append(separator.join(current_chunk))
+        
+        return chunks
 
 
 class VectorDB:
@@ -17,6 +124,9 @@ class VectorDB:
             collection_name: Name of the ChromaDB collection
             embedding_model: HuggingFace model name for embeddings
         """
+        self.log = LogManager()
+        self.log.add_logfile("vectordb")
+        self.log.write_log("vectordb", logging.INFO, "VectorDB initialized")
         self.collection_name = collection_name or os.getenv(
             "CHROMA_COLLECTION_NAME", "rag_documents"
         )
@@ -24,11 +134,14 @@ class VectorDB:
             "EMBEDDING_MODEL", "sentence-transformers/all-MiniLM-L6-v2"
         )
 
-        # Initialize ChromaDB client
-        self.client = chromadb.PersistentClient(path="./chroma_db")
+        # Initialize ChromaDB client with telemetry disabled
+        settings = Settings(
+            anonymized_telemetry=False
+        )
+        self.client = chromadb.PersistentClient(path="./chroma_db", settings=settings)
 
         # Load embedding model
-        print(f"Loading embedding model: {self.embedding_model_name}")
+        self.log.write_log("vectordb", logging.INFO, f"Loading embedding model: {self.embedding_model_name}")
         self.embedding_model = SentenceTransformer(self.embedding_model_name)
 
         # Get or create collection
@@ -37,40 +150,31 @@ class VectorDB:
             metadata={"description": "RAG document collection"},
         )
 
-        print(f"Vector database initialized with collection: {self.collection_name}")
+        self.log.write_log("vectordb", logging.INFO, f"Vector database initialized with collection: {self.collection_name}")
 
-    def chunk_text(self, text: str, chunk_size: int = 500) -> List[str]:
+    def chunk_text(self, text: str, chunk_size: int = 1000) -> List[str]:
         """
-        Simple text chunking by splitting on spaces and grouping into chunks.
+        Break text into searchable chunks using LangChain's RecursiveCharacterTextSplitter.
+        This method intelligently splits on paragraph breaks, sentences, and words
+        while maintaining context through overlapping chunks.
 
         Args:
             text: Input text to chunk
-            chunk_size: Approximate number of characters per chunk
+            chunk_size: Approximate number of characters per chunk (default: 1000)
 
         Returns:
             List of text chunks
         """
-        # TODO: Implement text chunking logic
-        # You have several options for chunking text - choose one or experiment with multiple:
-        #
-        # OPTION 1: Simple word-based splitting
-        #   - Split text by spaces and group words into chunks of ~chunk_size characters
-        #   - Keep track of current chunk length and start new chunks when needed
-        #
-        # OPTION 2: Use LangChain's RecursiveCharacterTextSplitter
-        #   - from langchain_text_splitters import RecursiveCharacterTextSplitter
-        #   - Automatically handles sentence boundaries and preserves context better
-        #
-        # OPTION 3: Semantic splitting (advanced)
-        #   - Split by sentences using nltk or spacy
-        #   - Group semantically related sentences together
-        #   - Consider paragraph boundaries and document structure
-        #
-        # Feel free to try different approaches and see what works best!
-
-        chunks = []
-        # Your implementation here
-
+        # Use LangChain's RecursiveCharacterTextSplitter for intelligent chunking
+        text_splitter = RecursiveCharacterTextSplitter(
+            chunk_size=chunk_size,          # ~200-250 words per chunk
+            chunk_overlap=200,              # Overlap to preserve context between chunks
+            separators=["\n\n", "\n", ". ", " ", ""],  # Try to split on these in order
+            length_function=len,
+        )
+        
+        chunks = text_splitter.split_text(text)
+        
         return chunks
 
     def add_documents(self, documents: List) -> None:
@@ -89,9 +193,46 @@ class VectorDB:
         # HINT: Store the embeddings, documents, metadata, and IDs in your vector database
         # HINT: Print progress messages to inform the user
 
-        print(f"Processing {len(documents)} documents...")
-        # Your implementation here
-        print("Documents added to vector database")
+        self.log.write_log("vectordb", logging.INFO, f"Processing {len(documents)} documents...")
+        
+        all_chunks = []
+        all_ids = []
+        all_metadatas = []
+        
+        for doc_idx, doc in enumerate(documents):
+            # Handle both string documents and dict documents
+            if isinstance(doc, str):
+                content = doc
+                metadata = {"source": f"document_{doc_idx}"}
+            else:
+                content = doc.get('content', str(doc))
+                metadata = doc.get('metadata', {"source": f"document_{doc_idx}"})
+            
+            # Split document into chunks with better chunk size
+            chunks = self.chunk_text(content, chunk_size=250)
+            
+            # Create IDs and metadata for each chunk
+            for chunk_idx, chunk in enumerate(chunks):
+                all_chunks.append(chunk)
+                all_ids.append(f"doc_{doc_idx}_chunk_{chunk_idx}")
+                chunk_metadata = metadata.copy()
+                chunk_metadata['chunk_index'] = str(chunk_idx)  # Convert to string for ChromaDB
+                all_metadatas.append(chunk_metadata)
+        
+        if all_chunks:
+            # Create embeddings for all chunks
+            embeddings = self.embedding_model.encode(all_chunks)
+            
+            # Add to ChromaDB collection
+            self.collection.add(
+                embeddings=embeddings.tolist(),
+                documents=all_chunks,
+                metadatas=all_metadatas,
+                ids=all_ids
+            )
+            self.log.write_log("vectordb", logging.INFO, f"Added {len(all_chunks)} chunks from {len(documents)} documents to vector database")
+        
+        self.log.write_log("vectordb", logging.INFO, "Documents added to vector database")
 
     def search(self, query: str, n_results: int = 5) -> Dict[str, Any]:
         """
@@ -111,10 +252,19 @@ class VectorDB:
         # HINT: Return a dictionary with keys: 'documents', 'metadatas', 'distances', 'ids'
         # HINT: Handle the case where results might be empty
 
-        # Your implementation here
+        # Create query embedding
+        query_embedding = self.embedding_model.encode([query])
+        
+        # Search in ChromaDB
+        results = self.collection.query(
+            query_embeddings=query_embedding.tolist(),
+            n_results=n_results
+        )
+        
+        # Return results in the expected format
         return {
-            "documents": [],
-            "metadatas": [],
-            "distances": [],
-            "ids": [],
+            "documents": results.get("documents", []),
+            "metadatas": results.get("metadatas", []),
+            "distances": results.get("distances", []),
+            "ids": results.get("ids", []),
         }

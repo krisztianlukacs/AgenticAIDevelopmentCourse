@@ -4,6 +4,8 @@ from .logmanager import LogManager
 import logging
 import datetime
 from .documentloader import DocumentLoader
+import os
+import warnings
 
 """
 The main applications entry point for the RAG-based AI assistant. 
@@ -23,6 +25,13 @@ Features:
 6. Combine multiple sources to give comprehensive answers 
 
 """
+
+# Disable ChromaDB telemetry before any imports
+os.environ['ANONYMIZED_TELEMETRY'] = 'False'
+
+# Suppress ChromaDB telemetry warnings by setting logging level
+chromadb_logger = logging.getLogger('chromadb')
+chromadb_logger.setLevel(logging.ERROR)
 
 # Load environment variables
 load_dotenv()

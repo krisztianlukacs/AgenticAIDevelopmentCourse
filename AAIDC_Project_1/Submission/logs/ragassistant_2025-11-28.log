@@ -17,3 +17,93 @@
 2025-11-28 21:42:51,619 - ragassistant - INFO - RAG chain created
 2025-11-28 21:42:51,619 - ragassistant - INFO - RAG Assistant initialized successfully
 2025-11-28 21:42:51,620 - ragassistant - INFO - Adding 1 documents to VectorDB
+2025-11-28 21:48:57,212 - ragassistant - INFO - Using Groq model: llama-3.1-8b-instant
+2025-11-28 21:48:59,518 - ragassistant - INFO - VectorDB initialized
+2025-11-28 21:48:59,519 - ragassistant - INFO - PromptManager initialized
+2025-11-28 21:53:38,064 - ragassistant - INFO - Using Groq model: llama-3.1-8b-instant
+2025-11-28 21:53:40,343 - ragassistant - INFO - VectorDB initialized
+2025-11-28 21:53:40,346 - ragassistant - INFO - PromptManager initialized
+2025-11-28 21:56:59,409 - ragassistant - INFO - Using Groq model: llama-3.1-8b-instant
+2025-11-28 21:57:01,674 - ragassistant - INFO - VectorDB initialized
+2025-11-28 21:57:01,676 - ragassistant - INFO - PromptManager initialized
+2025-11-28 21:57:01,677 - ragassistant - INFO - RAG chain created
+2025-11-28 21:57:01,677 - ragassistant - INFO - RAG Assistant initialized successfully
+2025-11-28 21:57:01,677 - ragassistant - INFO - Adding 1 documents to VectorDB
+2025-11-28 21:58:00,577 - ragassistant - INFO - Using Groq model: llama-3.1-8b-instant
+2025-11-28 21:58:02,881 - ragassistant - INFO - VectorDB initialized
+2025-11-28 21:58:02,883 - ragassistant - INFO - PromptManager initialized
+2025-11-28 21:58:02,883 - ragassistant - INFO - RAG chain created
+2025-11-28 21:58:02,883 - ragassistant - INFO - RAG Assistant initialized successfully
+2025-11-28 21:58:02,884 - ragassistant - INFO - Adding 1 documents to VectorDB
+2025-11-28 22:03:17,629 - ragassistant - INFO - Using Groq model: llama-3.1-8b-instant
+2025-11-28 22:03:20,496 - ragassistant - INFO - VectorDB initialized
+2025-11-28 22:03:20,499 - ragassistant - INFO - PromptManager initialized
+2025-11-28 22:03:20,499 - ragassistant - INFO - RAG chain created
+2025-11-28 22:03:20,500 - ragassistant - INFO - RAG Assistant initialized successfully
+2025-11-28 22:03:20,500 - ragassistant - INFO - Adding 1 documents to VectorDB
+2025-11-28 22:04:09,256 - ragassistant - INFO - Using Groq model: llama-3.1-8b-instant
+2025-11-28 22:04:11,680 - ragassistant - INFO - VectorDB initialized
+2025-11-28 22:04:11,682 - ragassistant - INFO - PromptManager initialized
+2025-11-28 22:04:11,682 - ragassistant - INFO - RAG chain created
+2025-11-28 22:04:11,683 - ragassistant - INFO - RAG Assistant initialized successfully
+2025-11-28 22:04:11,683 - ragassistant - INFO - Adding 1 documents to VectorDB
+2025-11-28 22:09:51,660 - ragassistant - INFO - Using Groq model: llama-3.1-8b-instant
+2025-11-28 22:09:54,239 - ragassistant - INFO - VectorDB initialized
+2025-11-28 22:09:54,241 - ragassistant - INFO - PromptManager initialized
+2025-11-28 22:09:54,242 - ragassistant - INFO - RAG chain created
+2025-11-28 22:09:54,242 - ragassistant - INFO - RAG Assistant initialized successfully
+2025-11-28 22:09:54,243 - ragassistant - INFO - Adding 1 documents to VectorDB
+2025-11-28 22:11:22,922 - ragassistant - INFO - Using Groq model: llama-3.1-8b-instant
+2025-11-28 22:11:25,252 - ragassistant - INFO - VectorDB initialized
+2025-11-28 22:11:25,254 - ragassistant - INFO - PromptManager initialized
+2025-11-28 22:11:25,255 - ragassistant - INFO - RAG chain created
+2025-11-28 22:11:25,255 - ragassistant - INFO - RAG Assistant initialized successfully
+2025-11-28 22:11:25,255 - ragassistant - INFO - Adding 1 documents to VectorDB
+2025-11-28 22:14:20,326 - ragassistant - INFO - Using Groq model: llama-3.1-8b-instant
+2025-11-28 22:14:22,834 - ragassistant - INFO - VectorDB initialized
+2025-11-28 22:14:22,836 - ragassistant - INFO - PromptManager initialized
+2025-11-28 22:14:22,836 - ragassistant - INFO - RAG chain created
+2025-11-28 22:14:22,836 - ragassistant - INFO - RAG Assistant initialized successfully
+2025-11-28 22:14:22,837 - ragassistant - INFO - Adding 1 documents to VectorDB
+2025-11-28 22:15:10,602 - ragassistant - INFO - Using Groq model: llama-3.1-8b-instant
+2025-11-28 22:15:12,861 - ragassistant - INFO - VectorDB initialized
+2025-11-28 22:15:12,863 - ragassistant - INFO - PromptManager initialized
+2025-11-28 22:15:12,864 - ragassistant - INFO - RAG chain created
+2025-11-28 22:15:12,864 - ragassistant - INFO - RAG Assistant initialized successfully
+2025-11-28 22:15:12,864 - ragassistant - INFO - Adding 1 documents to VectorDB
+2025-11-28 22:18:51,413 - ragassistant - INFO - Using Groq model: llama-3.1-8b-instant
+2025-11-28 22:18:53,709 - ragassistant - INFO - VectorDB initialized
+2025-11-28 22:18:53,711 - ragassistant - INFO - PromptManager initialized
+2025-11-28 22:18:53,711 - ragassistant - INFO - RAG chain created
+2025-11-28 22:18:53,712 - ragassistant - INFO - RAG Assistant initialized successfully
+2025-11-28 22:18:53,712 - ragassistant - INFO - Adding 1 documents to VectorDB
+2025-11-28 22:20:57,664 - ragassistant - INFO - Using Groq model: llama-3.1-8b-instant
+2025-11-28 22:20:59,938 - ragassistant - INFO - VectorDB initialized
+2025-11-28 22:20:59,939 - ragassistant - INFO - PromptManager initialized
+2025-11-28 22:20:59,940 - ragassistant - INFO - RAG chain created
+2025-11-28 22:20:59,940 - ragassistant - INFO - RAG Assistant initialized successfully
+2025-11-28 22:20:59,941 - ragassistant - INFO - Adding 1 documents to VectorDB
+2025-11-28 22:21:32,703 - ragassistant - INFO - Using Groq model: llama-3.1-8b-instant
+2025-11-28 22:21:35,070 - ragassistant - INFO - VectorDB initialized
+2025-11-28 22:21:35,073 - ragassistant - INFO - PromptManager initialized
+2025-11-28 22:21:35,073 - ragassistant - INFO - RAG chain created
+2025-11-28 22:21:35,073 - ragassistant - INFO - RAG Assistant initialized successfully
+2025-11-28 22:21:35,074 - ragassistant - INFO - Adding 1 documents to VectorDB
+2025-11-28 22:22:09,730 - ragassistant - INFO - Using Groq model: llama-3.1-8b-instant
+2025-11-28 22:22:12,132 - ragassistant - INFO - VectorDB initialized
+2025-11-28 22:22:12,134 - ragassistant - INFO - PromptManager initialized
+2025-11-28 22:22:12,135 - ragassistant - INFO - RAG chain created
+2025-11-28 22:22:12,135 - ragassistant - INFO - RAG Assistant initialized successfully
+2025-11-28 22:22:12,136 - ragassistant - INFO - Adding 1 documents to VectorDB
+2025-11-28 22:23:04,348 - ragassistant - INFO - Using Groq model: llama-3.1-8b-instant
+2025-11-28 22:23:06,960 - ragassistant - INFO - VectorDB initialized
+2025-11-28 22:23:06,963 - ragassistant - INFO - PromptManager initialized
+2025-11-28 22:23:06,964 - ragassistant - INFO - RAG chain created
+2025-11-28 22:23:06,964 - ragassistant - INFO - RAG Assistant initialized successfully
+2025-11-28 22:23:06,965 - ragassistant - INFO - Adding 1 documents to VectorDB
+2025-11-28 22:24:01,087 - ragassistant - INFO - Using Groq model: llama-3.1-8b-instant
+2025-11-28 22:24:03,544 - ragassistant - INFO - VectorDB initialized
+2025-11-28 22:24:03,546 - ragassistant - INFO - PromptManager initialized
+2025-11-28 22:24:03,547 - ragassistant - INFO - RAG chain created
+2025-11-28 22:24:03,547 - ragassistant - INFO - RAG Assistant initialized successfully
+2025-11-28 22:24:03,548 - ragassistant - INFO - Adding 1 documents to VectorDB

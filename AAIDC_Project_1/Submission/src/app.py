@@ -46,6 +46,7 @@ class RAGAssistant:
         self.log.write_log("ragassistant", logging.INFO, "PromptManager initialized")
 
         self.prompt_prompt = prompt_manager.get_system_prompt()
+
         self.prompt_template = ChatPromptTemplate.from_template(self.prompt_prompt)
         
         # Create the chain

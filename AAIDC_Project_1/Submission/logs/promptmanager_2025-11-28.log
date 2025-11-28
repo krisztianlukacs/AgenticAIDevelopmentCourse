@@ -13,3 +13,40 @@ could not find expected ':'
   in "./configuration/system_prompt.yaml", line 2, column 1
 could not find expected ':'
   in "./configuration/system_prompt.yaml", line 4, column 1
+2025-11-28 21:48:59,518 - promptmanager - INFO - PromptManager initialized
+2025-11-28 21:48:59,519 - promptmanager - ERROR - Error loading system prompt: while scanning a simple key
+  in "./configuration/system_prompt.yaml", line 2, column 1
+could not find expected ':'
+  in "./configuration/system_prompt.yaml", line 4, column 1
+2025-11-28 21:52:37,858 - promptmanager - INFO - PromptManager initialized
+2025-11-28 21:52:37,859 - promptmanager - INFO - Loaded system prompt from ./configuration/system_prompt.yaml
+2025-11-28 21:53:40,344 - promptmanager - INFO - PromptManager initialized
+2025-11-28 21:53:40,345 - promptmanager - INFO - Loaded system prompt from ./configuration/system_prompt.yaml
+2025-11-28 21:57:01,675 - promptmanager - INFO - PromptManager initialized
+2025-11-28 21:57:01,676 - promptmanager - INFO - Loaded system prompt from ./configuration/system_prompt.yaml
+2025-11-28 21:58:02,881 - promptmanager - INFO - PromptManager initialized
+2025-11-28 21:58:02,883 - promptmanager - INFO - Loaded system prompt from ./configuration/system_prompt.yaml
+2025-11-28 22:03:20,496 - promptmanager - INFO - PromptManager initialized
+2025-11-28 22:03:20,499 - promptmanager - INFO - Loaded system prompt from ./configuration/system_prompt.yaml
+2025-11-28 22:04:11,680 - promptmanager - INFO - PromptManager initialized
+2025-11-28 22:04:11,682 - promptmanager - INFO - Loaded system prompt from ./configuration/system_prompt.yaml
+2025-11-28 22:09:54,240 - promptmanager - INFO - PromptManager initialized
+2025-11-28 22:09:54,241 - promptmanager - INFO - Loaded system prompt from ./configuration/system_prompt.yaml
+2025-11-28 22:11:25,253 - promptmanager - INFO - PromptManager initialized
+2025-11-28 22:11:25,254 - promptmanager - INFO - Loaded system prompt from ./configuration/system_prompt.yaml
+2025-11-28 22:14:22,834 - promptmanager - INFO - PromptManager initialized
+2025-11-28 22:14:22,835 - promptmanager - INFO - Loaded system prompt from ./configuration/system_prompt.yaml
+2025-11-28 22:15:12,862 - promptmanager - INFO - PromptManager initialized
+2025-11-28 22:15:12,863 - promptmanager - INFO - Loaded system prompt from ./configuration/system_prompt.yaml
+2025-11-28 22:18:53,710 - promptmanager - INFO - PromptManager initialized
+2025-11-28 22:18:53,711 - promptmanager - INFO - Loaded system prompt from ./configuration/system_prompt.yaml
+2025-11-28 22:20:59,938 - promptmanager - INFO - PromptManager initialized
+2025-11-28 22:20:59,939 - promptmanager - INFO - Loaded system prompt from ./configuration/system_prompt.yaml
+2025-11-28 22:21:35,071 - promptmanager - INFO - PromptManager initialized
+2025-11-28 22:21:35,072 - promptmanager - INFO - Loaded system prompt from ./configuration/system_prompt.yaml
+2025-11-28 22:22:12,133 - promptmanager - INFO - PromptManager initialized
+2025-11-28 22:22:12,134 - promptmanager - INFO - Loaded system prompt from ./configuration/system_prompt.yaml
+2025-11-28 22:23:06,961 - promptmanager - INFO - PromptManager initialized
+2025-11-28 22:23:06,963 - promptmanager - INFO - Loaded system prompt from ./configuration/system_prompt.yaml
+2025-11-28 22:24:03,545 - promptmanager - INFO - PromptManager initialized
+2025-11-28 22:24:03,546 - promptmanager - INFO - Loaded system prompt from ./configuration/system_prompt.yaml
