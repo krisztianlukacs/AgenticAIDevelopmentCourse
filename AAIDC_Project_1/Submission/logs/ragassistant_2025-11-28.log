@@ -107,3 +107,9 @@
 2025-11-28 22:24:03,547 - ragassistant - INFO - RAG chain created
 2025-11-28 22:24:03,547 - ragassistant - INFO - RAG Assistant initialized successfully
 2025-11-28 22:24:03,548 - ragassistant - INFO - Adding 1 documents to VectorDB
+2025-11-28 22:42:38,690 - ragassistant - INFO - Using OpenAI model: gpt-4o-mini
+2025-11-28 22:42:41,081 - ragassistant - INFO - VectorDB initialized
+2025-11-28 22:42:41,082 - ragassistant - INFO - PromptManager initialized
+2025-11-28 22:42:41,083 - ragassistant - INFO - RAG chain created
+2025-11-28 22:42:41,083 - ragassistant - INFO - RAG Assistant initialized successfully
+2025-11-28 22:42:41,084 - ragassistant - INFO - Adding 1 documents to VectorDB

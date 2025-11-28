@@ -55,3 +55,6 @@
 2025-11-28 22:24:03,547 - documentloader - INFO - DocumentLoader initialized
 2025-11-28 22:24:03,548 - documentloader - INFO - Successfully loaded: AI_and_Learning.md
 2025-11-28 22:24:03,548 - documentloader - INFO - Total documents loaded: 1
+2025-11-28 22:42:41,083 - documentloader - INFO - DocumentLoader initialized
+2025-11-28 22:42:41,084 - documentloader - INFO - Successfully loaded: AI_and_Learning.md
+2025-11-28 22:42:41,084 - documentloader - INFO - Total documents loaded: 1

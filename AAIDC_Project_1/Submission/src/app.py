@@ -36,12 +36,7 @@ class RAGAssistant:
         self.vector_db = VectorDB()
         self.log.write_log("ragassistant", logging.INFO, "VectorDB initialized")
 
-        # Create RAG prompt template
-        # TODO: Implement your RAG prompt template
-        # HINT: Use ChatPromptTemplate.from_template() with a template string
-        # HINT: Your template should include placeholders for {context} and {question}
-        # HINT: Design your prompt to effectively use retrieved context to answer questions
-        
+        # Create RAG prompt template        
         prompt_manager = PromptManager()
         self.log.write_log("ragassistant", logging.INFO, "PromptManager initialized")
 
@@ -112,11 +107,6 @@ class RAGAssistant:
             Dictionary containing the answer and retrieved context
         """
         llm_answer = ""
-        # TODO: Implement the RAG query pipeline
-        # HINT: Use self.vector_db.search() to retrieve relevant context chunks
-        # HINT: Combine the retrieved document chunks into a single context string
-        # HINT: Use self.chain.invoke() with context and question to generate the response
-        # HINT: Return a string answer from the LLM
 
         # Your implementation here
         results = self.vector_db.search(input, n_results=n_results)
