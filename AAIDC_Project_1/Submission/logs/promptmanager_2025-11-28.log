@@ -1,0 +1,15 @@
+2025-11-28 21:40:49,259 - promptmanager - INFO - PromptManager initialized
+2025-11-28 21:40:49,259 - promptmanager - ERROR - Error loading system prompt: while scanning a simple key
+  in "./configuration/system_prompt.yaml", line 2, column 1
+could not find expected ':'
+  in "./configuration/system_prompt.yaml", line 4, column 1
+2025-11-28 21:41:19,329 - promptmanager - INFO - PromptManager initialized
+2025-11-28 21:41:19,330 - promptmanager - ERROR - Error loading system prompt: while scanning a simple key
+  in "./configuration/system_prompt.yaml", line 2, column 1
+could not find expected ':'
+  in "./configuration/system_prompt.yaml", line 4, column 1
+2025-11-28 21:42:51,618 - promptmanager - INFO - PromptManager initialized
+2025-11-28 21:42:51,619 - promptmanager - ERROR - Error loading system prompt: while scanning a simple key
+  in "./configuration/system_prompt.yaml", line 2, column 1
+could not find expected ':'
+  in "./configuration/system_prompt.yaml", line 4, column 1
