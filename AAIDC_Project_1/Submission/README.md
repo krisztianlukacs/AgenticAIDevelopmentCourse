@@ -20,7 +20,6 @@ After a successful application start, you will see this:
 ```text
 Welcome to the RAG-based AI Assistant! Type 'exit' to quit.
 You: What is the real world dilemma?
-Failed to send telemetry event CollectionQueryEvent: capture() takes 1 positional argument but 3 were given
 Assistant: **The Real World Dilemma**
 =========================
 
