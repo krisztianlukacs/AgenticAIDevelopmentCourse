@@ -54,3 +54,7 @@ could not find expected ':'
 2025-11-28 22:42:41,082 - promptmanager - INFO - Loaded system prompt from ./configuration/system_prompt.yaml
 2025-11-28 22:46:54,167 - promptmanager - INFO - PromptManager initialized
 2025-11-28 22:46:54,168 - promptmanager - INFO - Loaded system prompt from ./configuration/system_prompt.yaml
+2025-11-28 23:19:54,195 - promptmanager - INFO - PromptManager initialized
+2025-11-28 23:19:54,196 - promptmanager - INFO - Loaded system prompt from ./configuration/system_prompt.yaml
+2025-11-28 23:20:32,507 - promptmanager - INFO - PromptManager initialized
+2025-11-28 23:20:32,509 - promptmanager - INFO - Loaded system prompt from ./configuration/system_prompt.yaml
