@@ -1,0 +1,18 @@
+2025-11-29 09:57:40,917 - vectordb - INFO - VectorDB initialized
+2025-11-29 09:57:41,163 - vectordb - INFO - Loading embedding model: sentence-transformers/all-MiniLM-L6-v2
+2025-11-29 09:57:43,373 - vectordb - INFO - Vector database initialized with collection: rag_documents
+2025-11-29 09:57:43,378 - vectordb - INFO - Processing 1 documents...
+2025-11-29 09:57:44,332 - vectordb - INFO - Added 84 chunks from 1 documents to vector database
+2025-11-29 09:57:44,332 - vectordb - INFO - Documents added to vector database
+2025-11-29 09:58:19,926 - vectordb - INFO - VectorDB initialized
+2025-11-29 09:58:20,163 - vectordb - INFO - Loading embedding model: sentence-transformers/all-MiniLM-L6-v2
+2025-11-29 09:58:22,131 - vectordb - INFO - Vector database initialized with collection: rag_documents
+2025-11-29 09:58:22,135 - vectordb - INFO - Processing 1 documents...
+2025-11-29 09:58:23,044 - vectordb - INFO - Added 84 chunks from 1 documents to vector database
+2025-11-29 09:58:23,045 - vectordb - INFO - Documents added to vector database
+2025-11-29 09:58:46,746 - vectordb - INFO - VectorDB initialized
+2025-11-29 09:58:46,897 - vectordb - INFO - Loading embedding model: sentence-transformers/all-MiniLM-L6-v2
+2025-11-29 09:58:48,919 - vectordb - INFO - Vector database initialized with collection: rag_documents
+2025-11-29 09:58:48,922 - vectordb - INFO - Processing 1 documents...
+2025-11-29 09:58:49,897 - vectordb - INFO - Added 84 chunks from 1 documents to vector database
+2025-11-29 09:58:49,897 - vectordb - INFO - Documents added to vector database

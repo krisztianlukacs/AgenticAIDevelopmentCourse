@@ -1,0 +1,18 @@
+2025-11-29 09:57:40,655 - ragassistant - INFO - Using OpenAI model: gpt-4o-mini
+2025-11-29 09:57:43,373 - ragassistant - INFO - VectorDB initialized
+2025-11-29 09:57:43,376 - ragassistant - INFO - PromptManager initialized
+2025-11-29 09:57:43,376 - ragassistant - INFO - RAG chain created
+2025-11-29 09:57:43,377 - ragassistant - INFO - RAG Assistant initialized successfully
+2025-11-29 09:57:43,378 - ragassistant - INFO - Adding 1 documents to VectorDB
+2025-11-29 09:58:19,777 - ragassistant - INFO - Using Groq model: llama-3.1-8b-instant
+2025-11-29 09:58:22,131 - ragassistant - INFO - VectorDB initialized
+2025-11-29 09:58:22,134 - ragassistant - INFO - PromptManager initialized
+2025-11-29 09:58:22,134 - ragassistant - INFO - RAG chain created
+2025-11-29 09:58:22,134 - ragassistant - INFO - RAG Assistant initialized successfully
+2025-11-29 09:58:22,135 - ragassistant - INFO - Adding 1 documents to VectorDB
+2025-11-29 09:58:46,591 - ragassistant - INFO - Using Groq model: llama-3.1-8b-instant
+2025-11-29 09:58:48,919 - ragassistant - INFO - VectorDB initialized
+2025-11-29 09:58:48,921 - ragassistant - INFO - PromptManager initialized
+2025-11-29 09:58:48,921 - ragassistant - INFO - RAG chain created
+2025-11-29 09:58:48,921 - ragassistant - INFO - RAG Assistant initialized successfully
+2025-11-29 09:58:48,922 - ragassistant - INFO - Adding 1 documents to VectorDB
