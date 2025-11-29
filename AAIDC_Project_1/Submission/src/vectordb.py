@@ -14,7 +14,7 @@ class VectorDB:
     A simple vector database wrapper using ChromaDB with HuggingFace embeddings.
     """
 
-    def __init__(self, collection_name: str = None, embedding_model: str = None):
+    def __init__(self, collection_name: str = "", embedding_model: str = ""):
         """
         Initialize the vector database.
 

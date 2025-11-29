@@ -16,3 +16,9 @@
 2025-11-29 09:58:48,921 - ragassistant - INFO - RAG chain created
 2025-11-29 09:58:48,921 - ragassistant - INFO - RAG Assistant initialized successfully
 2025-11-29 09:58:48,922 - ragassistant - INFO - Adding 1 documents to VectorDB
+2025-11-29 10:02:33,951 - ragassistant - INFO - Using Groq model: llama-3.1-8b-instant
+2025-11-29 10:02:36,203 - ragassistant - INFO - VectorDB initialized
+2025-11-29 10:02:36,205 - ragassistant - INFO - PromptManager initialized
+2025-11-29 10:02:36,205 - ragassistant - INFO - RAG chain created
+2025-11-29 10:02:36,205 - ragassistant - INFO - RAG Assistant initialized successfully
+2025-11-29 10:02:36,206 - ragassistant - INFO - Adding 1 documents to VectorDB
